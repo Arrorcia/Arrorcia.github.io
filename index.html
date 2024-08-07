@@ -11,19 +11,9 @@
 
 </p>
 <script>
-    function getRequest(url, callback) {
-        var xhr = new XMLHttpRequest();
-        xhr.open("GET", url, true);
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === 4 && xhr.status === 200) {
-                callback(xhr.responseText);
-            }
-        };
-        xhr.send();
-    }
-
-    getRequest("http://localhost:8080", function (response) {
-        document.getElementById("response").innerHTML = response;
+    document.body.addEventListener("click", function(event) {
+        console.log("点击事件触发！");   //在控制台打印消息
+        console.log("点击坐标：", event.clientX, event.clientY);
     });
 </script>
 </body>
