@@ -14,6 +14,7 @@
     document.body.addEventListener("click", function(event) {
         console.log("点击事件触发！");   //在控制台打印消息
         console.log("点击坐标：", event.clientX, event.clientY);
+        document.getElementById("response").innerText=""+event.clientX+"," +event.clientY
     });
 </script>
 </body>
