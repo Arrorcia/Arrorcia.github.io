@@ -5,6 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Hello</h1>
+<p>Hello</p>
+<br/>
+<p id="response">
+
+</p>
+<script>
+    function getRequest(url, callback) {
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", url, true);
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4 && xhr.status === 200) {
+                callback(xhr.responseText);
+            }
+        };
+        xhr.send();
+    }
+
+    getRequest("http://localhost:8080", function (response) {
+        document.getElementById("response").innerHTML = response;
+    });
+</script>
 </body>
 </html>
